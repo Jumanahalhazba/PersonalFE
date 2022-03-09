@@ -2,14 +2,6 @@ import axios from 'axios';
 
 const EMPLOYEE_API_BASE_URL = "http://localhost:8084/api/v1/employees";
 
-// import axios from "axios";
-// axios.create({
-//   baseURL: "http://localhost:8084/api/v1/employees",
-//   headers: {
-//     "Content-type": "application/json"
-//   }
-// });
-
 class EmployeeService {
 
     getEmployees(){

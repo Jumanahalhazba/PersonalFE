@@ -8,8 +8,17 @@ import FooterComponent from './components/FooterComponent';
 import CreateEmployeeComponent from './components/CreateEmployeeComponent';
 import UpdateEmployeeComponent from './components/UpdateEmployeeComponent';
 import ViewEmployeeComponent from './components/ViewEmployeeComponent';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    fetch('http://localhost:8084/api/v1/login').then(resp => resp.text())
+     .then(resp =>{
+       console.log('Getting data from API'+resp);
+
+    })
+  }, [])
+
   return (
     <div>
         <Router>
