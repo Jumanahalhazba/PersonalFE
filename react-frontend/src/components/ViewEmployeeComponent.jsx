@@ -43,7 +43,6 @@ class ViewEmployeeComponent extends Component {
                         </div>
                         <button className="btn btn-danger" onClick={this.back} style={{marginLeft: "-20px"}}>Back</button>
                     </div>
-
                 </div>
             </div>
         )

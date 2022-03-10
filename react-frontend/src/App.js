@@ -26,7 +26,7 @@ function App() {
                 <div className="container">
                     <Switch> 
                           <Route path = "/" exact component = {Home}></Route>
-                          {/* <Route path = "/" exact component = {ListEmployeeComponent}></Route> */}
+                          <Route path = "/" exact component = {ListEmployeeComponent}></Route>
                           <Route path = "/employees" component = {ListEmployeeComponent}></Route>
                           <Route path = "/add-employee/:id" component = {CreateEmployeeComponent}></Route>
                           <Route path = "/view-employee/:id" component = {ViewEmployeeComponent}></Route>
@@ -34,7 +34,7 @@ function App() {
                     </Switch>
                 </div>
               <FooterComponent /> 
-        </Router>s
+        </Router>
     </div>
     
   );
