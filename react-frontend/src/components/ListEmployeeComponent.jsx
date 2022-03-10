@@ -11,6 +11,7 @@ class ListEmployeeComponent extends Component {
         this.addEmployee = this.addEmployee.bind(this);
         this.editEmployee = this.editEmployee.bind(this);
         this.deleteEmployee = this.deleteEmployee.bind(this);
+        this.back= this.back.bind(this);
     }
 
     deleteEmployee(id){
@@ -33,6 +34,10 @@ class ListEmployeeComponent extends Component {
 
     addEmployee(){
         this.props.history.push('/add-employee/_add');
+    }
+
+    back(){
+        this.props.history.push('/employees');
     }
 
     render() {
@@ -73,6 +78,9 @@ class ListEmployeeComponent extends Component {
                             </tbody>
                         </table>
 
+                 </div>
+                 <div className = "row">
+                    <button className="btn btn-danger" onClick={this.back} style={{marginLeft: "900px"}}>Back</button>
                  </div>
 
             </div>

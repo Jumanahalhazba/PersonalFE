@@ -5,7 +5,7 @@ class FooterComponent extends Component {
         super(props)
 
         this.state = {
-                 
+                            
         }
     }
 
