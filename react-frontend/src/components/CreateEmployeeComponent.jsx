@@ -100,6 +100,15 @@ class CreateEmployeeComponent extends Component {
                                             <input placeholder="Email Address" name="emailId" className="form-control" 
                                                 value={this.state.emailId} onChange={this.changeEmailHandler}/>
                                         </div>
+                                        {/* Image upload fe */}
+                                        <div className = "form-group">
+                                            <label>Upload Your Avatar</label>
+                                            <form method="POST" action="/photos/add" enctype="multipart/form-data">
+                                                Title:<input type="text" name="title" />
+                                                Image:<input type="file" name="image" accept="image/*" />
+                                                <input type="submit" value="Upload" />
+                                            </form>
+                                        </div>
 
                                         <button className="btn btn-success" onClick={this.saveOrUpdateEmployee}>Save</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
