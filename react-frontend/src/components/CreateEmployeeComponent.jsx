@@ -10,7 +10,8 @@ class CreateEmployeeComponent extends Component {
             id: this.props.match.params.id,
             firstName: '',
             lastName: '',
-            emailId: ''
+            emailId: '',
+            title: '',
         }
         this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
         this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
@@ -28,14 +29,15 @@ class CreateEmployeeComponent extends Component {
                 let employee = res.data;
                 this.setState({firstName: employee.firstName,
                     lastName: employee.lastName,
-                    emailId : employee.emailId
+                    emailId : employee.emailId,
+                    title: employee.title
                 });
             });
         }        
     }
     saveOrUpdateEmployee = (e) => {
         e.preventDefault();
-        let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId};
+        let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId,  title: this.state.title};
         console.log('employee => ' + JSON.stringify(employee));
 
         // step 5
@@ -60,6 +62,9 @@ class CreateEmployeeComponent extends Component {
 
     changeEmailHandler= (event) => {
         this.setState({emailId: event.target.value});
+    }
+    changeImageHandler= (event) => {
+        this.setState({title: event.target.value});
     }
 
     cancel(){
@@ -100,15 +105,37 @@ class CreateEmployeeComponent extends Component {
                                             <input placeholder="Email Address" name="emailId" className="form-control" 
                                                 value={this.state.emailId} onChange={this.changeEmailHandler}/>
                                         </div>
+                                        <div className = "form-group">
+                                            <label> Title Of Image: </label>
+                                            <input placeholder="Title of Image" name="title" className="form-control" 
+                                                value={this.state.title} onChange={this.changeImageHandler}/>
+                                        </div>
                                         {/* Image upload fe */}
                                         <div className = "form-group">
                                             <label>Upload Your Avatar</label>
-                                            <form method="POST" action="/photos/add" enctype="multipart/form-data">
+                                            <form method="POST" action="/employees" enctype="multipart/form-data">
                                                 Title:<input type="text" name="title" />
                                                 Image:<input type="file" name="image" accept="image/*" />
-                                                <input type="submit" value="Upload" />
+                                                {/* <input type="submit" value="Upload" />  */}
+                                                <input type="submit" value={this.state.title} onChange={this.changeImageHandler}/>
+                                                 <img src="/@{${employee.title}}" /> 
                                             </form>
+{/*                                             
+                                            <form
+                                             th:action="@{/users/save}"
+                                             th:object="${user}" method="post"
+                                             enctype="multipart/form-data"
+                                             >
+                                             <div>
+                                              
+                                             <label>Photos: </label>
+                                             <input type="file" name="image" accept="image/png, image/jpeg" />
+                                              
+                                             </div>
+                                            </form> */}
+
                                         </div>
+                                        
 
                                         <button className="btn btn-success" onClick={this.saveOrUpdateEmployee}>Save</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
