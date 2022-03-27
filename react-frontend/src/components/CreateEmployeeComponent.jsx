@@ -37,12 +37,12 @@ class CreateEmployeeComponent extends Component {
     }
     saveOrUpdateEmployee = (e) => {
         e.preventDefault();
-        let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId,  title: this.state.title};
+        let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId,  title: this.state.title.name};
         console.log('employee => ' + JSON.stringify(employee));
 
         // step 5
         if(this.state.id === '_add'){
-            EmployeeService.createEmployee(employee).then(res =>{
+            EmployeeService.createEmployee(employee, this.state.title).then(res =>{
                 this.props.history.push('/employees');
             });
         }else{
@@ -64,7 +64,9 @@ class CreateEmployeeComponent extends Component {
         this.setState({emailId: event.target.value});
     }
     changeImageHandler= (event) => {
-        this.setState({title: event.target.value});
+        console.log(event.target.files[0])  
+        this.setState({title: event.target.files[0]});
+        //this.setState({title: event.target.value});
     }
 
     cancel(){
@@ -105,22 +107,22 @@ class CreateEmployeeComponent extends Component {
                                             <input placeholder="Email Address" name="emailId" className="form-control" 
                                                 value={this.state.emailId} onChange={this.changeEmailHandler}/>
                                         </div>
-                                        <div className = "form-group">
+                                        {/* <div className = "form-group">
                                             <label> Title Of Image: </label>
                                             <input placeholder="Title of Image" name="title" className="form-control" 
                                                 value={this.state.title} onChange={this.changeImageHandler}/>
-                                        </div>
+                                        </div> */}
                                         {/* Image upload fe */}
                                         <div className = "form-group">
                                             <label>Upload Your Avatar</label>
-                                            <form method="POST" action="/employees" enctype="multipart/form-data">
-                                                Title:<input type="text" name="title" />
-                                                Image:<input type="file" name="image" accept="image/*" />
+                                            <form method="POST" action="/employees" encType="multipart/form-data">
+                                                {/* Title:<input type="text" name="title" /> */}
+                                                Image:<input type="file" name="image" accept="image/*" onChange={(event)=>this.changeImageHandler(event)}/>
                                                 {/* <input type="submit" value="Upload" />  */}
-                                                <input type="submit" value={this.state.title} onChange={this.changeImageHandler}/>
-                                                 <img src="/@{${employee.title}}" /> 
+                                                <input type="" value={this.state.title}/>
+                                                 <img src={`http://localhost:8084/api/v1/user-photos/${this.state.id}/${this.state.title}`} /> 
                                             </form>
-{/*                                             
+                                            {/*
                                             <form
                                              th:action="@{/users/save}"
                                              th:object="${user}" method="post"

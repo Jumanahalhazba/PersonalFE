@@ -1,8 +1,9 @@
 import React from "react";
 import test1 from "../../src/components/test1.jpeg";
 import test2 from "../../src/components/test2.jpg";
+import Jumanah from "../../src/components/Jumanah.jpeg";
 import {Modal,Button} from 'react-bootstrap'; 
-
+import EmployeeService from '../services/EmployeeService';
 const Home = () => {
   
   return (
@@ -13,6 +14,11 @@ const Home = () => {
     <a href='/employees'><img src={test1} class="rounded float-left" alt="pic1" style={{ paddingLeft: 10 ,maxWidth: 150}}></img></a>
     </div>
     
+    <div className="image-click">
+    {/* <img src={`http://localhost:8084/api/v1/user-photos/${this.state.employees}`} />  */}
+    <a href='/employees'><img src={Jumanah} class="rounded float-left" alt="pic1" style={{ paddingLeft: 10 ,maxWidth: 150}}></img></a>
+    </div>
+
     <img src={test2} class="rounded float-left" alt="pic2" style={{paddingLeft: 10 ,maxWidth: 150}}></img>
 
     {/* <div> 
