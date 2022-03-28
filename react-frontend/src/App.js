@@ -7,8 +7,9 @@ import FooterComponent from './components/FooterComponent';
 import CreateEmployeeComponent from './components/CreateEmployeeComponent';
 import UpdateEmployeeComponent from './components/UpdateEmployeeComponent';
 import ViewEmployeeComponent from './components/ViewEmployeeComponent';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Home from './components/Home';
+import LandingPage from './components/LandingPage';
 
 function App() {
   useEffect(() => {
@@ -25,8 +26,9 @@ function App() {
               <HeaderComponent />
                 <div className="container">
                     <Switch> 
-                          <Route path = "/" exact component = {Home}></Route>
-                          <Route path = "/" exact component = {ListEmployeeComponent}></Route>
+                          {/* <Route path = "/" exact component = {Home}></Route> */}
+                          <Route path = "/" exact component = {LandingPage}></Route>
+                          {/* <Route path = "/" exact component = {ListEmployeeComponent}></Route> */}
                           <Route path = "/employees" component = {ListEmployeeComponent}></Route>
                           <Route path = "/add-employee/:id" component = {CreateEmployeeComponent}></Route>
                           <Route path = "/view-employee/:id" component = {ViewEmployeeComponent}></Route>

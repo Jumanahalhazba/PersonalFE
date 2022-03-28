@@ -68,8 +68,7 @@ class ListEmployeeComponent extends Component {
                                              <td> { employee.firstName} </td>   
                                              <td> {employee.lastName}</td>
                                              <td> {employee.emailId}</td>
-                                             <td>                                                  <img src={`http://localhost:8084/api/v1/user-photos/${employee.id}/${employee.title}`} /> 
-</td>
+                                             <td> <img src={`http://localhost:8084/api/v1/user-photos/${employee.id}/${employee.title}`} /> </td>
                                              <td>
                                                  <button onClick={ () => this.editEmployee(employee.id)} className="btn btn-info">Update </button>
                                                  <button style={{marginLeft: "10px"}} onClick={ () => this.deleteEmployee(employee.id)} className="btn btn-danger">Delete </button>

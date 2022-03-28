@@ -16,6 +16,10 @@ const Home = () => {
     
     <div className="image-click">
     {/* <img src={`http://localhost:8084/api/v1/user-photos/${this.state.employees}`} />  */}
+    <img src={`http://localhost:8084/api/v1/employees`} /> 
+    {/* <img src={`http://localhost:8084/api/v1/user-photos/273300908/Jumanahpng.png`} />  */}
+    {/* <img src={`http://localhost:8084/api/v1/user-photos/`} />  */}
+    {/* <img src={`http://localhost:8084/api/v1/employees/${this.state.id}/${this.state.title}`} />  */}
     <a href='/employees'><img src={Jumanah} class="rounded float-left" alt="pic1" style={{ paddingLeft: 10 ,maxWidth: 150}}></img></a>
     </div>
 
@@ -45,8 +49,7 @@ const Home = () => {
 
     <body>
         <label>View Photo</label>
-        Title: <span text="${title}">name</span>
-        <img alt="sample" src="*{'data:image/png;base64,'+image}" />
+        {/* <img src="*{'multipartFile:image/png;base64,'+image}" /> */}
     </body>
 
     </div>

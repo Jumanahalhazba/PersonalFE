@@ -107,12 +107,6 @@ class CreateEmployeeComponent extends Component {
                                             <input placeholder="Email Address" name="emailId" className="form-control" 
                                                 value={this.state.emailId} onChange={this.changeEmailHandler}/>
                                         </div>
-                                        {/* <div className = "form-group">
-                                            <label> Title Of Image: </label>
-                                            <input placeholder="Title of Image" name="title" className="form-control" 
-                                                value={this.state.title} onChange={this.changeImageHandler}/>
-                                        </div> */}
-                                        {/* Image upload fe */}
                                         <div className = "form-group">
                                             <label>Upload Your Avatar</label>
                                             <form method="POST" action="/employees" encType="multipart/form-data">
@@ -122,23 +116,7 @@ class CreateEmployeeComponent extends Component {
                                                 <input type="" value={this.state.title}/>
                                                  <img src={`http://localhost:8084/api/v1/user-photos/${this.state.id}/${this.state.title}`} /> 
                                             </form>
-                                            {/*
-                                            <form
-                                             th:action="@{/users/save}"
-                                             th:object="${user}" method="post"
-                                             enctype="multipart/form-data"
-                                             >
-                                             <div>
-                                              
-                                             <label>Photos: </label>
-                                             <input type="file" name="image" accept="image/png, image/jpeg" />
-                                              
-                                             </div>
-                                            </form> */}
-
                                         </div>
-                                        
-
                                         <button className="btn btn-success" onClick={this.saveOrUpdateEmployee}>Save</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
                                     </form>
