@@ -48,6 +48,7 @@ class LandingPage extends Component {
         this.props.history.push('/');
     }
     openModal(empId) {
+        console.log(empId)
         this.setState({
             show: !this.state.show,
             selectedEmp: empId,
@@ -57,18 +58,18 @@ class LandingPage extends Component {
     render() {
         return (
             <div>
-                <h2 className="text-center">SELECT Yourself</h2>
+                <h2 className="text-center">SELECT YOURSELF</h2>
                 <br></br>
                 <div className="row">
                     {
                         this.state.employees.map(
                             employee =>
-                                <img key={employee.id} onClick={() => this.openModal(employee.id)} src={`http://localhost:8084/api/v1/user-photos/${employee.id}/${employee.title}`} class="rounded float-left" alt="pic1" style={{ paddingLeft: 10, maxWidth: 150 }}></img>
-                        )
+                                <img key={employee.id} onClick={() => this.openModal(employee.id)} src={`http://localhost:8084/api/v1/user-photos/${employee.id}/${employee.title}`} class="rounded float-left" alt="pic1" style={{ paddingLeft: 10, maxWidth: 200 }} ></img>
+                                )
                     }
                 </div>
 
-                <AddTempModal show={this.state.show} message={this.state.currentDateTime}/>
+                <AddTempModal show={this.state.show} date={this.state.currentDateTime} id={this.state.selectedEmp}/>
                 {/* <AddTempModal show={this.state.show} message={this.state.selectedEmp}/> */}
             </div>
         )

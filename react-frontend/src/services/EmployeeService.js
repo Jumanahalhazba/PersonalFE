@@ -28,8 +28,16 @@ class EmployeeService {
         return axios.get(EMPLOYEE_API_BASE_URL + '/' + employeeId);
     }
 
-    updateEmployee(employee, employeeId) {
-        return axios.put(EMPLOYEE_API_BASE_URL + '/' + employeeId, employee);
+    updateEmployee(employee, employeeId, file) {
+        let formData = new FormData();
+        formData.append("multipartFile", file);
+        formData.append("firstName", employee.firstName);
+        formData.append("lastName", employee.lastName);
+        formData.append("emailId", employee.emailId);
+        formData.append("title", employee.title);
+        formData.append("temp", employee.temp);
+
+        return axios.put(EMPLOYEE_API_BASE_URL + '/' + employeeId, formData);
     }
 
     deleteEmployee(employeeId) {

@@ -40,6 +40,8 @@ class UpdateEmployeeComponent extends Component {
         });
     }
     
+
+
     changeFirstNameHandler= (event) => {
         this.setState({firstName: event.target.value});
     }
@@ -103,11 +105,11 @@ class UpdateEmployeeComponent extends Component {
                                                  <img src={`http://localhost:8084/api/v1/user-photos/${this.state.id}/${this.state.title}`} /> 
                                             </form>
                                         </div>
-                                        {/* <div className = "form-group">
+                                        <div className = "form-group">
                                             <label> Title: </label>
                                             <input placeholder="title" name="title" className="form-control" 
                                                 value={this.state.title} onChange={this.changeImageHandler}/>
-                                        </div> */}
+                                        </div>
                                         <div className = "form-group">
                                             <label> Temp: </label>
                                             <input placeholder="temp" name="temp" className="form-control" 

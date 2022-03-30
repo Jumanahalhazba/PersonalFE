@@ -49,7 +49,7 @@ class ListEmployeeComponent extends Component {
                  </div>
                  <br></br>
                  <div className = "row">
-                        <table className = "table table-striped table-bordered">
+                        <table className = "table table-striped table-dark">
 
                             <thead>
                                 <tr>
@@ -69,10 +69,10 @@ class ListEmployeeComponent extends Component {
                                              <td> { employee.firstName} </td>   
                                              <td> {employee.lastName}</td>
                                              <td> {employee.emailId}</td>
-                                             <td> <img src={`http://localhost:8084/api/v1/user-photos/${employee.id}/${employee.title}`} /> </td>
+                                             <td> <img src={`http://localhost:8084/api/v1/user-photos/${employee.id}/${employee.title}`} class="rounded float-left" alt="pic1" style={{ paddingLeft: 10, maxWidth: 150 }} /> </td>
                                              <td> {employee.temp}</td>
                                              <td>
-                                                 <button onClick={ () => this.editEmployee(employee.id)} className="btn btn-info">Update </button>
+                                                 <button style={{marginLeft: "10px"}} onClick={ () => this.editEmployee(employee.id)} className="btn btn-success">Update </button>
                                                  <button style={{marginLeft: "10px"}} onClick={ () => this.deleteEmployee(employee.id)} className="btn btn-danger">Delete </button>
                                                  <button style={{marginLeft: "10px"}} onClick={ () => this.viewEmployee(employee.id)} className="btn btn-info">View </button>
                                              </td>
@@ -84,7 +84,7 @@ class ListEmployeeComponent extends Component {
 
                  </div>
                  <div className = "row">
-                    <button className="btn btn-danger" onClick={this.back} style={{marginLeft: "900px"}}>Back</button>
+                    <button className="btn btn-danger" onClick={this.back} style={{marginLeft: "1080px"}}>Back</button>
                  </div>
 
             </div>

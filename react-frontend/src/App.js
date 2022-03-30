@@ -10,6 +10,7 @@ import ViewEmployeeComponent from './components/ViewEmployeeComponent';
 import { useEffect, useState } from 'react';
 import Home from './components/Home';
 import LandingPage from './components/LandingPage';
+import AnalysisPage from './components/AnalysisPage';
 
 function App() {
   useEffect(() => {
@@ -33,6 +34,7 @@ function App() {
                           <Route path = "/add-employee/:id" component = {CreateEmployeeComponent}></Route>
                           <Route path = "/view-employee/:id" component = {ViewEmployeeComponent}></Route>
                           {<Route path = "/update-employee/:id" component = {UpdateEmployeeComponent}></Route> }
+                          <Route path = "/analysis" component = {AnalysisPage}></Route>
                     </Switch>
                 </div>
               {/* <FooterComponent />  */}
