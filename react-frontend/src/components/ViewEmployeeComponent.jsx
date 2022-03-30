@@ -45,6 +45,10 @@ class ViewEmployeeComponent extends Component {
                             <label> Employee Title: </label>
                             <div> { this.state.employee.title }</div>
                         </div>
+                        <div className = "row">
+                            <label> Employee Temp: </label>
+                            <div> { this.state.employee.temp}</div>
+                        </div>
                         <button className="btn btn-danger" onClick={this.back} style={{marginLeft: "-20px"}}>Back</button>
                     </div>
                 </div>

@@ -11,6 +11,7 @@ class UpdateEmployeeComponent extends Component {
             lastName: '',
             emailId: '',
             title: '',
+            temp: '',
         }
         this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
         this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
@@ -24,13 +25,14 @@ class UpdateEmployeeComponent extends Component {
                 lastName: employee.lastName,
                 emailId : employee.emailId,
                 title: employee.title,
+                temp: employee.temp
             });
         });
     }
 
     updateEmployee = (e) => {
         e.preventDefault();
-        let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId};
+        let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId, title: this.state.title.name, temp: this.state.temp};
         console.log('employee => ' + JSON.stringify(employee));
         console.log('id => ' + JSON.stringify(this.state.id));
         EmployeeService.updateEmployee(employee, this.state.id).then( res => {
@@ -49,6 +51,18 @@ class UpdateEmployeeComponent extends Component {
     changeEmailHandler= (event) => {
         this.setState({emailId: event.target.value});
     }
+
+    changeImageHandler= (event) => {
+        console.log(event.target.files[0])  
+        this.setState({title: event.target.files[0]});
+        //this.setState({title: event.target.value});
+    }
+
+    changeTempHandler= (event) => {
+        this.setState({temp: event.target.value});
+    }
+
+
 
     cancel(){
         this.props.history.push('/employees');
@@ -80,11 +94,26 @@ class UpdateEmployeeComponent extends Component {
                                                 value={this.state.emailId} onChange={this.changeEmailHandler}/>
                                         </div>
                                         <div className = "form-group">
+                                            <label>Upload Your Avatar</label>
+                                            <form method="POST" action="/employees" encType="multipart/form-data">
+                                                {/* Title:<input type="text" name="title" /> */}
+                                                Image:<input type="file" name="image" accept="image/*" onChange={(event)=>this.changeImageHandler(event)}/>
+                                                {/* <input type="submit" value="Upload" />  */}
+                                                <input type="" value={this.state.title}/>
+                                                 <img src={`http://localhost:8084/api/v1/user-photos/${this.state.id}/${this.state.title}`} /> 
+                                            </form>
+                                        </div>
+                                        {/* <div className = "form-group">
                                             <label> Title: </label>
                                             <input placeholder="title" name="title" className="form-control" 
-                                                value={this.state.title} onChange={this.changeEmailHandler}/>
+                                                value={this.state.title} onChange={this.changeImageHandler}/>
+                                        </div> */}
+                                        <div className = "form-group">
+                                            <label> Temp: </label>
+                                            <input placeholder="temp" name="temp" className="form-control" 
+                                                value={this.state.temp} onChange={this.changeTempHandler}/>
                                         </div>
-
+                                        
                                         <button className="btn btn-success" onClick={this.updateEmployee}>Save</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
                                     </form>

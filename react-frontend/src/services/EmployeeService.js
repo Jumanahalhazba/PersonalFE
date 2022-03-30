@@ -18,6 +18,8 @@ class EmployeeService {
         formData.append("lastName", employee.lastName);
         formData.append("emailId", employee.emailId);
         formData.append("title", employee.title);
+        formData.append("temp", employee.temp);
+
 
         return axios.post(EMPLOYEE_API_BASE_URL + '/save', formData);
     }

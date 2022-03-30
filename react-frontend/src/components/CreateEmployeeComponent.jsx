@@ -12,6 +12,7 @@ class CreateEmployeeComponent extends Component {
             lastName: '',
             emailId: '',
             title: '',
+            temp: '',
         }
         this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
         this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
@@ -30,14 +31,15 @@ class CreateEmployeeComponent extends Component {
                 this.setState({firstName: employee.firstName,
                     lastName: employee.lastName,
                     emailId : employee.emailId,
-                    title: employee.title
+                    title: employee.title,
+                    temp: employee.temp
                 });
             });
         }        
     }
     saveOrUpdateEmployee = (e) => {
         e.preventDefault();
-        let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId,  title: this.state.title.name};
+        let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId,  title: this.state.title.name, temp: this.state.temp};
         console.log('employee => ' + JSON.stringify(employee));
 
         // step 5
@@ -67,6 +69,10 @@ class CreateEmployeeComponent extends Component {
         console.log(event.target.files[0])  
         this.setState({title: event.target.files[0]});
         //this.setState({title: event.target.value});
+    }
+
+    changeTempHandler= (event) => {
+        this.setState({temp: event.target.value});
     }
 
     cancel(){
@@ -106,6 +112,11 @@ class CreateEmployeeComponent extends Component {
                                             <label> Email Id: </label>
                                             <input placeholder="Email Address" name="emailId" className="form-control" 
                                                 value={this.state.emailId} onChange={this.changeEmailHandler}/>
+                                        </div>
+                                        <div className = "form-group">
+                                            <label> Temp: </label>
+                                            <input placeholder="temp" name="temp" className="form-control" 
+                                                value={this.state.temp} onChange={this.changeTempHandler}/>
                                         </div>
                                         <div className = "form-group">
                                             <label>Upload Your Avatar</label>

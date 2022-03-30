@@ -11,6 +11,7 @@ class LandingPage extends Component {
             employees: [],
             show: false,
             selectedEmp: null,
+            currentDateTime: Date().toLocaleString()
         }
 
         this.addEmployee = this.addEmployee.bind(this);
@@ -57,9 +58,6 @@ class LandingPage extends Component {
         return (
             <div>
                 <h2 className="text-center">SELECT Yourself</h2>
-                <div className="row">
-                    <button className="btn btn-primary" onClick={this.addEmployee}> Add Employee</button>
-                </div>
                 <br></br>
                 <div className="row">
                     {
@@ -70,11 +68,8 @@ class LandingPage extends Component {
                     }
                 </div>
 
-                {/* <div className = "row">
-                    <button className="btn btn-danger" onClick={this.back} style={{marginLeft: "900px"}}>Back</button>
-                 </div> */}
-
-                <AddTempModal show={this.state.show} message={this.state.selectedEmp}/>
+                <AddTempModal show={this.state.show} message={this.state.currentDateTime}/>
+                {/* <AddTempModal show={this.state.show} message={this.state.selectedEmp}/> */}
             </div>
         )
     }
