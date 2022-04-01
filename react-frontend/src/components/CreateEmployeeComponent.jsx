@@ -146,7 +146,7 @@ class CreateEmployeeComponent extends Component {
                                             Image:<input type="file" name="image" accept="image/*" onChange={(event) => this.changeImageHandler(event)} />
                                             {/* <input type="submit" value="Upload" />  */}
                                             <input type="" value={this.state.title} />
-                                            <img src={`http://localhost:8084/api/v1/user-photos/${this.state.id}/${this.state.title}`} />
+                                            <img src={`http://localhost:8084/api/v1/user-photos/${this.state.id}/${this.state.title}`} class="rounded float-left" alt="pic1" style={{ paddingLeft: 10, maxWidth: 200 }} />
                                         </form>
                                     </div>
                                     <button className="btn btn-success" onClick={this.saveOrUpdateEmployee}>Save</button>

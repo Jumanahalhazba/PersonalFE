@@ -42,22 +42,26 @@ class ListEmployeeComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div class="w-100">
+                {/* <div class="p-3 mb-2 bg-dark"></div>  */}
+
                  <h2 className="text-center">Employees List</h2>
-                 <div className = "row">
+                 <div className = "row" >
+                 {/* <div class="p-3 mb-2 bg-dark"></div>  */}
                     <button className="btn btn-primary" onClick={this.addEmployee}> Add Employee</button>
                  </div>
                  <br></br>
                  <div className = "row">
-                        <table className = "table table-striped table-dark">
+                    
+                        <table className = "table table-bordered table-dark">
 
                             <thead>
                                 <tr>
-                                    <th> Employee First Name</th>
-                                    <th> Employee Last Name</th>
-                                    <th> Employee Email Id</th>
-                                    <th> Employee Title</th>
-                                    <th> Employee Temp</th>
+                                    <th> Avatar</th>
+                                    <th> First Name</th>
+                                    <th> Last Name</th>
+                                    <th> Email Address</th>
+                                    <th> Temperature</th>
                                     <th> Actions</th>
                                 </tr>
                             </thead>
@@ -66,10 +70,10 @@ class ListEmployeeComponent extends Component {
                                     this.state.employees.map(
                                         employee => 
                                         <tr key = {employee.id}>
+                                             <td> <img src={`http://localhost:8084/api/v1/user-photos/${employee.id}/${employee.title}`} class="rounded float-left" alt="pic1" style={{ paddingLeft: 10, maxWidth: 150 }} /> </td>
                                              <td> { employee.firstName} </td>   
                                              <td> {employee.lastName}</td>
                                              <td> {employee.emailId}</td>
-                                             <td> <img src={`http://localhost:8084/api/v1/user-photos/${employee.id}/${employee.title}`} class="rounded float-left" alt="pic1" style={{ paddingLeft: 10, maxWidth: 150 }} /> </td>
                                              <td> {employee.temp}</td>
                                              <td>
                                                  <button style={{marginLeft: "10px"}} onClick={ () => this.editEmployee(employee.id)} className="btn btn-success">Update </button>
