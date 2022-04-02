@@ -1,48 +1,195 @@
-.App {
-  text-align: center;
+* {
+  --primary-color: #232323;
+  --secondary-color: #aaff4e;
+
+  --text-primary-color: #8b8a89;
+  --text-secondary-color: #aaff4e;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3 {
+  color: var(--text-primary-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-container {
+  width: calc(100vw-20px);
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-content {
+  height: calc(100vh - 150px);
+  background-image: url(https://c.tenor.com/SK0O3MgNu4QAAAAC/walter-funny.gif);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: var(--primary-color);
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.container {
+  width: 80vw !important;
+}
+
+.app-header {
   display: flex;
   flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: var(--primary-color);
+}
+.navbar-header {
+  display: flex;
+  height: 100px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-navbar {
+  width: 80vw;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width:100%;
+  padding: 0px 50px;
+  border: 2px solid var(--secondary-color);
+  flex-wrap: wrap;
+  align-content: center;
   height: 50px;
-  background-color: black;
-  text-align: center;
-  color: white;
+}
+
+.navbar-item {
+  color: var(--text-primary-color);
+  text-decoration: none;
+  font-weight: bolder;
+  margin: 20px;
+}
+
+.navbar-item:hover {
+  text-decoration: none;
+  color: var(--text-secondary-color);
+}
+
+.navbar-item.active {
+  color: var(--text-secondary-color);
+}
+
+.logo {
+  height: 50px;
+}
+
+.row {
+  display: flex;
+}
+
+.row.center {
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.row.right {
+  flex-direction: row;
+  align-content: center;
+  justify-content: right;
+  align-items: center;
+}
+
+.wide-btn {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+.table-header {
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.table-row {
+  border-bottom: 2px solid var(--secondary-color);
+  border-top: 2px solid var(--secondary-color);
+}
+
+.table-row.light {
+  background-color: #3d454b;
+}
+.table-row.dark {
+  background-color: #333b41;
+}
+
+.custom-table {
+  width: 100%;
+  color: #fff;
+}
+
+.table-row-avatar {
+  width: 100px;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.table-row > td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px;
+}
+
+.btn-outlined {
+  border-radius: 0;
+  border: 1px solid var(--secondary-color);
+  color: var(--text-secondary-color);
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-outlined > span:nth-child(2) {
+  padding: 0px 20px;
+}
+
+.text-as-icon {
+  font-weight: 400;
+  font-size: xx-large;
+}
+
+.top-margin-50 {
+  margin-top: 50px;
+}
+
+.dashboard-card {
+  width: 200px;
+  height: 250px;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #86fe4e #3d454b;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #3d454b;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #86fe4e;
+  border-radius: 10px;
+  border: 0px solid #ffffff;
 }
