@@ -42,6 +42,10 @@ class ViewEmployeeComponent extends Component {
               <label> &nbsp;{this.state.employee.emailId}</label>
             </div>
             <div className="row">
+              <label> Employee Temp: </label>
+              <label> &nbsp;{this.state.employee.temp}</label>
+            </div>
+            <div className="row">
               <label> Employee Title: </label>
               &nbsp;
               <img
@@ -49,10 +53,6 @@ class ViewEmployeeComponent extends Component {
                 className="rounded img-card"
                 alt="image"
               />
-            </div>
-            <div className="row">
-              <label> Employee Temp: </label>
-              <label> &nbsp;{this.state.employee.temp}</label>
             </div>
             <button onClick={this.back} className="btn btn-danger float-right">
               Back

@@ -167,8 +167,8 @@ p {
 }
 
 .table-row-avatar {
-  width: 100px;
-  height: 150px;
+  width: 200px;
+  height: 250px;
   border-radius: 5px;
 }
 
@@ -207,7 +207,16 @@ p {
 .dashboard-card {
   width: 200px;
   height: 250px;
+  border-color: var(--secondary-color);
 }
+
+.dashboard-card:hover{
+  width: 200px;
+  height: 250px;
+  border-color: var(--secondary-color);
+  opacity: 0.5;
+}
+
 
 .disabled {
   display: none;
