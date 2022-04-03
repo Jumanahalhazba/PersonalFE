@@ -1,34 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
 * {
-  --primary-color: #232323;
+  --primary-color: #212121;
   --secondary-color: #aaff4e;
 
   --text-primary-color: #8b8a89;
   --text-secondary-color: #aaff4e;
+
+  --animation-time: 300ms;
+
+  font-family: "Montserrat", sans-serif;
 }
 
 h1,
 h2,
-h3 {
+h3,
+label {
   color: var(--text-primary-color);
+}
+p {
+  color: #fff;
+  font-weight: bolder;
 }
 
 .main-container {
   width: calc(100vw-20px);
   height: 100vh;
+  background-color: var(--primary-color);
+  overflow-y: scroll;
+  padding-bottom: 50px;
 }
 
 .main-content {
   height: calc(100vh - 150px);
-  background-image: url(https://c.tenor.com/SK0O3MgNu4QAAAAC/walter-funny.gif);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-color: var(--primary-color);
   width: 100%;
-  padding-bottom: 50px;
 }
 
 .container {
   width: 80vw !important;
+}
+
+.card-container {
+  max-width: 500px !important;
+}
+
+.chart-container {
+  max-width: 800px;
+}
+
+.emp-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.chart-img {
+  width: 200px;
+  height: 250px;
+}
+
+.my-chart {
+  width: 600px;
+  height: 250px;
 }
 
 .app-header {
@@ -172,6 +209,52 @@ h3 {
   height: 250px;
 }
 
+.disabled {
+  display: none;
+}
+
+.disabled-text-input {
+  border: 1px solid #f00 !important;
+}
+
+.warning {
+  color: #f00;
+}
+
+.img-card {
+  width: 150px;
+  height: 200px;
+}
+
+/* ====== Custom File Input =====*/
+.my-custom-file-input {
+  background-color: var(--primary-color);
+
+  color: var(--text-secondary-color);
+
+  margin: 10px;
+
+  min-width: 260px;
+}
+
+.my-custom-file-input::-webkit-file-upload-button {
+  background-color: var(--secondary-color);
+  color: #000;
+  border: none;
+  margin: 0px;
+  transition: var(--animation-time);
+  cursor: pointer;
+  margin-right: 20px;
+  height: 40px;
+}
+
+.my-custom-file-input::-webkit-file-upload-button:hover {
+  opacity: 0.5;
+}
+
+.custom-file-uploader {
+  display: flex;
+}
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {

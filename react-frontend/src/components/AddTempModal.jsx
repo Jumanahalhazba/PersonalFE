@@ -36,22 +36,6 @@ export class AddTempModal extends Component {
       });
     });
   };
-  //   saveOrUpdateEmployee = (e) => {
-  //     e.preventDefault();
-  //     let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId,  title: this.state.title.name, temp: this.state.temp};
-  //     console.log('employee => ' + JSON.stringify(employee));
-
-  //     // step 5
-  //     if(this.state.id === '_popup'){
-  //         EmployeeService.createEmployee(employee, this.state.title, this.state.temp).then(res =>{
-  //             this.props.history.push('/employees');
-  //         });
-  //     }else{
-  //         EmployeeService.updateEmployee(employee, this.state.id).then( res => {
-  //             this.props.history.push('/employees');
-  //         });
-  //     }
-  // }
 
   changeTempHandler = (event) => {
     this.setState({ temp: event.target.value });
@@ -67,8 +51,6 @@ export class AddTempModal extends Component {
 
           <Modal.Body>
             {moment(this.state.date).format("lll")}
-            {/* <input placeholder="Enter your temperature here" keyboardType="numeric" /> */}
-
             <div className="form-group">
               <input
                 placeholder="temp"
