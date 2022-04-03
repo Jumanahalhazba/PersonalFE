@@ -15,7 +15,8 @@ class HeaderComponent extends Component {
     };
     return (
       <div className="app-header">
-        <img className="logo" src={RetroLogo}></img>
+        <a href='https://na.leagueoflegends.com/en/featured/events/avatar-creator#/'> <img className="logo" src={RetroLogo}></img></a>
+
 
         {/* <div><a class="navbar-brand" href="#"> <img src= {Retro2} marginRight= "100" width="150" height="100" alt=""></img></a></div> */}
 
